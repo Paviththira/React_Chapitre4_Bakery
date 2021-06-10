@@ -1,8 +1,4 @@
 import React from "react";
-import '../App';
-import '../Onglet';
-
-
 
 
 class List extends React.Component {

@@ -2,7 +2,9 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Onglet from './Onglet';
-
+import Add from "./Component/Add";
+import List from "./Component/List";
+import Pay from "./Component/Pay";
 
 
 class App extends React.Component {
@@ -21,7 +23,7 @@ class App extends React.Component {
   render() {
     return (
 
-      <div>
+      <div className='container'>
         <h2>SP Bakery</h2>
         <div class="btn-group" role="group" aria-label="Basic example">
           <Onglet
@@ -36,8 +38,11 @@ class App extends React.Component {
             name="Pay"
             isSelected={this.state.selectedTab === "Pay"}
             onClickFunction={this.onClick}></Onglet>
-
         </div>
+        {this.state.selectedTab === "Add" && <Add />}
+        {this.state.selectedTab === "List" && <List />}
+        {this.state.selectedTab === "Pay" && <Pay />}
+
       </div>
 
     )

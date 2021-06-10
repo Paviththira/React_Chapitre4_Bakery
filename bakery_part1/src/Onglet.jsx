@@ -1,8 +1,6 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
-import Add from './Component/Add';
-import List from './Component/List';
-import Pay from './Component/Pay';
+
 
 class Onglet extends React.Component {
     render() {
