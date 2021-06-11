@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: "Add"
+      selectedTab: "Add",
+      item: []
 
     }
   }
@@ -19,6 +20,17 @@ class App extends React.Component {
     this.setState({ selectedTab: e.target.name })
   }
 
+  addItem = (name, price) => {
+    let item = {};
+    item.name = name;
+    item.price = price;
+    this.state.item.push(item);
+    console.log(this.state.item);
+
+  }
+  listItem() {
+
+  }
 
   render() {
     return (
@@ -39,8 +51,8 @@ class App extends React.Component {
             isSelected={this.state.selectedTab === "Pay"}
             onClickFunction={this.onClick}></Onglet>
         </div>
-        {this.state.selectedTab === "Add" && <Add />}
-        {this.state.selectedTab === "List" && <List />}
+        {this.state.selectedTab === "Add" && <Add addItemFunction={this.addItem} />}
+        {this.state.selectedTab === "List" && <List list={this.state.item} />}
         {this.state.selectedTab === "Pay" && <Pay />}
 
       </div>

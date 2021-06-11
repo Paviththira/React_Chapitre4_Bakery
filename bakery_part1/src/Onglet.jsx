@@ -1,7 +1,6 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 
-
 class Onglet extends React.Component {
     render() {
         return (
@@ -14,11 +13,6 @@ class Onglet extends React.Component {
                     {this.props.name}
                 </Button>
             </div >
-
-
-
-
-
 
         );
     };
